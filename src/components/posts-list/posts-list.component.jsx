@@ -1,16 +1,18 @@
 import React from "react";
-import { SimpleGrid } from "@chakra-ui/core";
+import { useSelector } from "react-redux";
+import { SimpleGrid,CircularProgress } from "@chakra-ui/core";
 
 import PostItem from "../post-item/post-item.component";
 
-const PostsList = ({user}) => {
-    console.log(user)
-  return (
+const PostsList = ({ user }) => {
+  const {posts} = useSelector(state => state.posts)
+   return (
     <SimpleGrid mt="55rem" mb="20px" p="4">
-      <PostItem user={user}/>
-      <PostItem user={user}/>
-      <PostItem user={user}/>
-      <PostItem user={user}/>
+      {
+        posts.length > 0 ? (
+          posts.map(post => <PostItem key={post.id} user={post}/>)
+        ) : <CircularProgress isIndeterminate color="green"/>
+      }
     </SimpleGrid>
   );
 };

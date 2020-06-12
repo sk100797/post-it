@@ -15,8 +15,7 @@ const PostItem = ({ user }) => {
       </Flex>
       <Divider />
       <Text p="4">
-        Lorem ipsim is placegorldaf.Note that the development build is not
-        optimized. To create a production build, use yarn build.
+        {user.postText}
       </Text>
     </Box>
   );
