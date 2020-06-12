@@ -2,6 +2,7 @@
   "name": "post-it",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://sk100797.github.io/post-it",
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
@@ -10,11 +11,20 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "emotion-theming": "^10.0.27",
+    "firebase": "^7.15.1",
+    "gh-pages": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.1.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
