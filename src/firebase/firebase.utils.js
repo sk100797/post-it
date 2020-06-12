@@ -45,6 +45,24 @@ export const createUserProfileDocument = async (userAuth) => {
   return userRef;
 };
 
+export const createPostInFirebase = async (postObj) => {
+  const postsRef = firestore.collection("posts");
+  const newPostDoc = postsRef.doc()
+  const { displayName, photoURL, postText } = postObj.payload;
+  console.log(postObj)
+  const createdAt = new Date();
+  try {
+    await newPostDoc.set({
+      displayName,
+      photoURL,
+      postText,
+      createdAt,
+    });
+  } catch (error) {
+    console.log("Error during posts creation", error.message);
+  }
+};
+
 export const getCurrentUser = () => {
   return new Promise((resolve, reject) => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
