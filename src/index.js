@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider, CSSReset, ColorModeProvider } from "@chakra-ui/core";
+import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import store from "./redux/store";
@@ -12,9 +13,11 @@ ReactDOM.render(
     <ThemeProvider>
       <ColorModeProvider>
         <CSSReset />
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
+        <BrowserRouter>
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </BrowserRouter>
       </ColorModeProvider>
     </ThemeProvider>
   </Provider>,

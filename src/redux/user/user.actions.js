@@ -7,6 +7,12 @@ export const setCurrentUser = (user) => {
   };
 };
 
+export const checkUserSession = () => {
+  return {
+    type: userActionTypes.CHECK_USER_SESSION,
+  };
+};
+
 export const googleSignInStart = () => {
   return {
     type: userActionTypes.GOOGLE_SIGN_IN_START,
